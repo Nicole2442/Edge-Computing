@@ -10,7 +10,7 @@ There are two ways for transitioning provided by Intel: OpenVINO toolkit and NCS
 
 ### OpenVINO installation and test
 
-Step 1. Follow the [tutorial](developer.movidius.com/start) to install OpenVINO toolkit. 
+Step 1. Follow the [tutorial](https://software.intel.com/en-us/articles/get-started-with-neural-compute-stick) to install OpenVINO toolkit. 
 
 After installation, there are basic three folders in our home dictionary:
 
