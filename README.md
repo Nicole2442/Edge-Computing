@@ -62,6 +62,27 @@ cd your_path/keras_to_tensorflow
 python keras_to_tensorflow.py --input_model='xxx.h5' --output_model='xxx.pb'
 ```
 
+### Use tensorboard to check the input, output and network
+
+```markdown
+cd yourpath/pb2lite
+python view.py
+tensorboard --logdir log/
+```
+Then, open the web browser: localhost:6006. 
+
+In the graph, you need to check:
+1. Check the input name, input dim, output name and output dim
+2. Check the network structure to make sure the model satisfying the "supported operation"
+2.1 [All operations supported by the Edge TPU and any known limitations](https://coral.withgoogle.com/docs/edgetpu/models-intro/)
+2.2 [Requirement of Edge TPU online compiler](https://coral.withgoogle.com/web-compiler/)
+
+After that, convert the tensorflow frozen graph (.pb) into tensorflow lite model (.lite)
+
+```markdown
+python convert.py
+```
+
 
 ### convert Tensorflow model to IR model using OpenVINO toolkit
 
