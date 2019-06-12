@@ -87,15 +87,16 @@ In the graph, you need to check the following content:
 input name: input_1 with shape [1,368,368,3]  
  ![image](https://github.com/Nicole2442/HW-acceleration/img/input_1.png)  
 input name: input_2 with shape [1,46,46,38]  
-  ![image](https://github.com/Nicole2442/HW-acceleration/img/input_2.png)   
+ ![image](https://github.com/Nicole2442/HW-acceleration/img/input_2.png)   
 input name: input_3 with shape [1,46,46,19]  
-  ![image](https://github.com/Nicole2442/HW-acceleration/img/input_3.png)  
-2. Check the network structure to make sure the model satisfying the "supported operation"
-
-2.1 Operations supported by Intel Movidius Neural Compute Stick
-
-2.2 [All operations supported by the Edge TPU and any known limitations](https://coral.withgoogle.com/docs/edgetpu/models-intro/)
-
+ ![image](https://github.com/Nicole2442/HW-acceleration/img/input_3.png)  
+ output name: Mconv7_stage2_L1/BiasAdd
+ ![image](https://github.com/Nicole2442/HW-acceleration/img/output_1.png)  
+ output name: Mconv8_stage2_L1/BiasAdd
+ ![image](https://github.com/Nicole2442/HW-acceleration/img/output_2.png)  
+2. Check the network structure to make sure the model satisfying the "supported operation"  
+2.1 Operations supported by Intel Movidius Neural Compute Stick  
+2.2 [All operations supported by the Edge TPU and any known limitations](https://coral.withgoogle.com/docs/edgetpu/models-intro/)  
 2.3 [Requirement of Edge TPU online compiler](https://coral.withgoogle.com/web-compiler/)
 
 ### Convert Tensorflow model to IR model using OpenVINO toolkit
@@ -115,6 +116,7 @@ We use Pythn API for test.
 cd your_path/model_test
 python test_op.py
 ```
+
 ****
 
 ## Convert Keras model on Google Coral Edge TPU USB accelerator
@@ -136,10 +138,9 @@ Note:
 1. check the graph on tensorboard for input_arrays and output_arrays
 2. input_shapes: only need input_1 shape (1,368,368,3)
 
-### convert tensorflow lite model to tensorflow edge lite model
+### Convert tensorflow lite model to tensorflow edge lite model
 
-Google provide [Edge TPU Model Compiler](https://coral.withgoogle.com/web-compiler) for converting.
-
+Google provide [Edge TPU Model Compiler](https://coral.withgoogle.com/web-compiler) for converting.  
 Check the requirements and upload the tflite model, and the web complier convert the edge lite model automatically.
 
 Note: if failed, according to the requirements, we need use TensorFlow Lite Optimizing Converter (TOCO) to get a fully-quantized TensorFlow Lite model:
