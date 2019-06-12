@@ -117,6 +117,20 @@ Google provide [Edge TPU Model Compiler](https://coral.withgoogle.com/web-compil
 
 Check the requirements and upload the tflite model, and the web complier convert the edge lite model automatically.
 
+Use TensorFlow Lite Optimizing Converter (TOCO) to get a fully-quantized TensorFlow Lite model
+
+```markdown
+toco \
+  --input_file=frozen_graph.pb \
+  --output_file=tflite_model.tflite \
+  --input_format=TENSORFLOW_GRAPHDEF --output_format=TFLITE \
+  --inference_type=QUANTIZED_UINT8 \
+  --input_shape="1,368, 368,3" \
+  --input_array=input_1 \
+  --output_array="Mconv7_stage2_L1/BiasAdd","Mconv8_stage2_L1/BiasAdd" \
+  --std_value=128 --mean_value=128 --default_ranges_min=0 --default_ranges_max=6
+```
+
 ### run Edge TPU model (.tflite) on Google Coral Edge TPU USB accelerator
 
 
