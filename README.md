@@ -55,7 +55,13 @@ def _eucl_loss(x,y):
         model = keras.models.load_model(input_model_path, custom_objects={'_eucl_loss':_eucl_loss})
 ```
 
-After that, we convert Keras model (.h5) to tensowflow model (.pb). The tensorfow model is the frozen graph.
+After that, we convert Keras model (.h5) to tensowflow model (.pb) with the following command. The tensorfow model is the frozen graph.
+
+```markdown
+cd your_path/keras_to_tensorflow
+python keras_to_tensorflow.py --input_model='xxx.h5' --output_model='xxx.pb'
+```
+
 
 ### convert Tensorflow model to IR model using OpenVINO toolkit
 
