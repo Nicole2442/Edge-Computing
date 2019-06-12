@@ -2,16 +2,16 @@
 
 Most deep learning achievements need computing resources and cloud computing is the way to deal with the resource issue. While in some scenario, we care more about low latency, bandwidth, security or cost. Hosting your deep learning model on the cloud may not be the better choice in such situation.
 
-Deep learning on the edge provide solutions to the above problems. As the computing resource is the key point for edge computing, many companies provide their own plarforms to deploy the deep learning models on the normal but limited hardware platform (e.g. Raspberry Pi). We will discuss two main platforms in the following content:
+Deep learning on the edge provide solutions to the above problems. As the computing resource is the key point for edge computing, many companies provide their own platforms to deploy the deep learning models on the normal but limited hardware platform (e.g. Raspberry Pi). We will discuss two main platforms in the following content:
 
 1. [Intel Movidius Neural Compute Stick](https://software.intel.com/en-us/neural-compute-stick) 
 2. [Google Coral Edge TPU USB accelerator](https://coral.withgoogle.com)
 
 Based on the above links, we could easily setup the environment and pass demo test. Also the two platform provides many converted models to developers. 
 
-While if we design own our algorithm, we need convert our own model and deploy it to the hardware platform. In the following content, we will discuss how to convert and deploy our own model (Keras or Tensorflow based) to the above two edge computing platform. 
+While if we design own our algorithm, we need convert our own model and deploy it on the hardware platform. In the following content, we will discuss how to convert and deploy our own model (Keras or Tensorflow based) on these two edge computing platforms. 
 
-We take the OpenPose model for example. The model we convert is based on [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose) algorithm. We accelerate this algorithm from two sides: software and hardware. For the software acceleration part, we simplify the network structure for acceleration and achieve it by Keras. 
+We take the OpenPose model for example. The model we convert is based on [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose) algorithm. We accelerate this algorithm from two sides: software and hardware. For the software acceleration part, we simplify the network structure and achieve it based on Keras. 
 
 After that, we try hardware acceleration on two platforms: [Intel Movidius Neural Compute Stick](https://software.intel.com/en-us/neural-compute-stick) and [Google Coral Edge TPU USB accelerator](https://coral.withgoogle.com).
 
@@ -22,13 +22,9 @@ There are two ways for transitioning provided by Intel: OpenVINO toolkit and NCS
 ### OpenVINO installation and test
 
 Step 1. Follow the [tutorial](https://software.intel.com/en-us/articles/get-started-with-neural-compute-stick) to install OpenVINO toolkit. 
-
-After installation, there are basic three folders in our home dictionary:
-
-xxx@xxx:your_path/intel/openvino_xxxx.x.xxx
-
-xxx@xxx:your_path/inference_engine_samples_build
-
+After installation, there are basic three folders in our home dictionary:  
+xxx@xxx:your_path/intel/openvino_xxxx.x.xxx  
+xxx@xxx:your_path/inference_engine_samples_build  
 xxx@xxx:your_path/openvino_models
 
 Step 2. Run demo
@@ -87,7 +83,13 @@ tensorboard --logdir log/
 Then, open the web browser and input: localhost:6006. 
 
 In the graph, you need to check the following content:
-1. Check the input name, input dim, output name and output dim
+1. Check the input name, input dim, output name and output dim  
+input name: input_1 with shape [1,368,368,3]  
+ ![image](https://github.com/Nicole2442/HW-acceleration/img/input_1.png)  
+input name: input_2 with shape [1,46,46,38]  
+  ![image](https://github.com/Nicole2442/HW-acceleration/img/input_2.png)   
+input name: input_3 with shape [1,46,46,19]  
+  ![image](https://github.com/Nicole2442/HW-acceleration/img/input_3.png)  
 2. Check the network structure to make sure the model satisfying the "supported operation"
 
 2.1 Operations supported by Intel Movidius Neural Compute Stick
@@ -113,7 +115,7 @@ We use Pythn API for test.
 cd your_path/model_test
 python test_op.py
 ```
-
+****
 
 ## Convert Keras model on Google Coral Edge TPU USB accelerator
 

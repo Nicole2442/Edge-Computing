@@ -16,7 +16,7 @@ from openvino.inference_engine import IENetwork, IEPlugin
 
 model_xml = "op_32.xml"
 model_bin = "op_32.bin"
-image_test = "0001.jpeg"
+image_test = "your_image.jpeg"
 
 def main():
     # device initialization
