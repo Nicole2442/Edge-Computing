@@ -85,15 +85,15 @@ Then, open the web browser and input: localhost:6006.
 In the graph, you need to check the following content:
 1. Check the input name, input dim, output name and output dim  
 input name: input_1 with shape [1,368,368,3]  
- ![image](https://github.com/Nicole2442/HW-acceleration/img/input_1.png)  
+ ![image](https://github.com/Nicole2442/HW-acceleration/blob/master/img/input_1.png)  
 input name: input_2 with shape [1,46,46,38]  
- ![image](https://github.com/Nicole2442/HW-acceleration/img/input_2.png)   
+ ![image](https://github.com/Nicole2442/HW-acceleration/blob/master/img/input_2.png)   
 input name: input_3 with shape [1,46,46,19]  
- ![image](https://github.com/Nicole2442/HW-acceleration/img/input_3.png)  
- output name: Mconv7_stage2_L1/BiasAdd
- ![image](https://github.com/Nicole2442/HW-acceleration/img/output_1.png)  
- output name: Mconv8_stage2_L1/BiasAdd
- ![image](https://github.com/Nicole2442/HW-acceleration/img/output_2.png)  
+ ![image](https://github.com/Nicole2442/HW-acceleration/blob/master/img/input_3.png)  
+ output name: Mconv7_stage2_L1/BiasAdd  
+ ![image](https://github.com/Nicole2442/HW-acceleration/blob/master/img/output_1.png)  
+ output name: Mconv8_stage2_L1/BiasAdd  
+ ![image](https://github.com/Nicole2442/HW-acceleration/blob/master/img/output_2.png)  
 2. Check the network structure to make sure the model satisfying the "supported operation"  
 2.1 Operations supported by Intel Movidius Neural Compute Stick  
 2.2 [All operations supported by the Edge TPU and any known limitations](https://coral.withgoogle.com/docs/edgetpu/models-intro/)  
