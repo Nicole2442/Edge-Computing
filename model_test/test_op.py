@@ -27,8 +27,12 @@ def main():
     net = IENetwork(model=model_xml, weights=model_bin)
 
     log.info("Preparing input blobs")
-    input_blob = next(iter(net.inputs))
-    out_blob = next(iter(net.outputs))
+    input_blob1 = next(iter(net.inputs))
+    input_blob2 = next(iter(net.inputs))
+    input_blob3 = next(iter(net.inputs))
+    out_blob1 = next(iter(net.outputs))
+    out_blob2 = next(iter(net.outputs))
+
 
     # Loading model to the plugin
     log.info("Loading model to the plugin")
@@ -49,13 +53,15 @@ def main():
 
     # Processing output blob
     log.info("Processing output blob")
-    res = res[out_blob]
-    log.info("results: ")
+    res1 = res[out_blob1] # Mconv7_stage2_L1/convolution
+    res2 = res[out_blob2] # Mconv8_stage2_L1/convolution
 
     # clean up
     del net
     del exec_net
     del plugin
+    
+    return res1, res2
 
 
 if __name__ == '__main__':
