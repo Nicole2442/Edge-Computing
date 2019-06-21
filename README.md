@@ -103,7 +103,7 @@ input name: input_3 with shape [1,46,46,19]
 
 ```markdown
 cd xxx@xxx:your_path/intel/openvino_xxxx.x.xxx/deployment_tools/model_optimizer
-python3 mo_tf.py --input_model xxx.pb --input_shape [1,368,368,3],[1,46,46,38],[1,46,46,19] --input input_1,input_2,input_3 --data_type FP16 --output_dir /tmp/
+python3 mo_tf.py --input_model xxx.pb --input_shape [1,368,368,3],[1,46,46,38],[1,46,46,19] --input input_1,input_2,input_3 --data_type FP16 --output Mconv7_stage2_L1/BiasAdd,Mconv8_stage2_L1/BiasAdd --output_dir /tmp/
 ```
 
 Note: the input_shape cannot set as -1 or None. Check the source code and graph on TensorBoard to make sure the input_shape and input parameters. 
