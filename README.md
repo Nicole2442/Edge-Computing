@@ -117,6 +117,11 @@ cd your_path/model_test
 python test_op.py
 ```
 
+### Acceleration result
+CPU (Intel core i5-4300U CPU) -- 234.9ms
+NCS (Intel Neutal compute stick - MA2540 VPU) -- 11.6ms
+
+
 ****
 
 ## Convert Keras model on Google Coral Edge TPU USB accelerator
