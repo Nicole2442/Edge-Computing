@@ -118,7 +118,7 @@ python test_op.py
 ```
 
 ### Acceleration result
-CPU (Intel core i5-4300U CPU) -- 234.9ms
+CPU (Intel core i5-4300U CPU) -- 234.9ms  
 NCS (Intel Neutal compute stick - MA2540 VPU) -- 11.6ms
 
 
