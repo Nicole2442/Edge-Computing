@@ -159,4 +159,4 @@ toco --input_file=op.pb --output_file=op_quantized.tflite --input_format=TENSORF
 
 ## Support or Contact
 
-If any question, contact with [email](nicolekliao@163.com) and we will help you sort it out.
+If any question, contact with [email](nicole2442@gmail.com) and we will help you sort it out.
